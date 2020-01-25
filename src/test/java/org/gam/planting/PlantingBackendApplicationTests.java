@@ -8,6 +8,7 @@ class PlantingBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("First test");
 	}
 
 }
