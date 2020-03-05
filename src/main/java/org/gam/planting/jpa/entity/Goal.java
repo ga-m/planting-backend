@@ -3,8 +3,6 @@ package org.gam.planting.jpa.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,16 +28,16 @@ public class Goal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer member_id;
+    private Long memberId;
 
     private String name;
 
     private String description;
 
-    @Enumerated(EnumType.STRING)
+    // @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Enumerated(EnumType.STRING)
+    // @Enumerated(EnumType.STRING)
     private Type type;
 
     private Short order;
@@ -51,8 +49,8 @@ public class Goal {
     private LocalDateTime updateTimestamp;
 
     @Builder
-    public Goal(Integer member_id, String name, String description, Status status, Type type, Short order) {
-        this.member_id = member_id;
+    public Goal(Long memberId, String name, String description, Status status, Type type, Short order) {
+        this.memberId = memberId;
         this.name = name;
         this.description = description;
         this.status = status;
