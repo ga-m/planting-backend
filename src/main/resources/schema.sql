@@ -1,6 +1,19 @@
+CREATE TABLE `member` (
+  `id` BIGINT NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(16) NOT NULL,
+  `nickname` VARCHAR(16) NOT NULL,
+  `join_type` ENUM('basic', 'other') NOT NULL DEFAULT 'basic',
+  `status` ENUM('pending', 'active', 'deleted') NOT NULL DEFAULT 'active',
+  `tier` ENUM('1', '2', '3') NOT NULL DEFAULT '1',
+  `create_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
+
 CREATE TABLE `goal` (
   `id` BIGINT NOT NULL COMMENT '			',
-  `member_id` INT NOT NULL,
+  `member_id` BIGINT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(45) NULL,
   `status` ENUM('active', 'deleted') NOT NULL DEFAULT 'active',

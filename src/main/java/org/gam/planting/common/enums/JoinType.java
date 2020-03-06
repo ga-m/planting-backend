@@ -3,12 +3,12 @@ package org.gam.planting.common.enums;
 import lombok.Getter;
 
 @Getter
-public enum Status {
-    ACTIVE("active"), DELETED("deleted");
+public enum JoinType {
+    BASIC("basic"), OTHER("other");
 
     private String code;
 
-    private Status(String code) {
+    private JoinType(String code) {
         this.code = code;
     }
 }

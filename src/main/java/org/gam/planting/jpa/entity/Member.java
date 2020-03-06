@@ -3,12 +3,15 @@ package org.gam.planting.jpa.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.gam.planting.common.enums.JoinType;
 import org.gam.planting.common.enums.Status;
-import org.gam.planting.common.enums.Type;
+import org.gam.planting.common.enums.Tier;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -22,25 +25,26 @@ import lombok.ToString;
 @ToString
 @Getter
 @Entity
-public class Goal {
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long memberId;
+    private String email;
 
-    private String name;
+    private String password;
 
-    private String description;
+    private String nickname;
+
+    // @Enumerated(EnumType.STRING)
+    private JoinType joinType;
 
     // @Enumerated(EnumType.STRING)
     private Status status;
 
     // @Enumerated(EnumType.STRING)
-    private Type type;
-
-    private Short order;
+    private Tier tier;
 
     @CreationTimestamp
     private LocalDateTime createTimestamp;
@@ -49,12 +53,12 @@ public class Goal {
     private LocalDateTime updateTimestamp;
 
     @Builder
-    public Goal(Long memberId, String name, String description, Status status, Type type, Short order) {
-        this.memberId = memberId;
-        this.name = name;
-        this.description = description;
+    public Member(String email, String password, String nickname, JoinType joinType, Status status, Tier tier) {
+        this.email = email;
+        this.password = password;
+        this.nickname = nickname;
+        this.joinType = joinType;
         this.status = status;
-        this.type = type;
-        this.order = order;
+        this.tier = tier;
     }
 }
