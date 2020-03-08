@@ -33,7 +33,7 @@ CREATE TABLE `level_basic` (
   PRIMARY KEY (`goal_id`, `seq`)
 );
 
-CREATE TABLE `archive` (
+CREATE TABLE `achieve` (
   `id` BIGINT NOT NULL,
   `goal_id` BIGINT NOT NULL,
   `level_seq` BIGINT NOT NULL,
