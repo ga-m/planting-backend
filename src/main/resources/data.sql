@@ -3,6 +3,8 @@ VALUES (1, 'test@email.com', '123', 'test', 'basic', 'active', '1', '2020-01-01 
 
 INSERT INTO `goal` (`id`, `member_id`, `name`, `description`, `status`, `type`, `goal_order`, `create_timestamp`, `update_timestamp`) 
 VALUES (1, 1, 'test', 'test', 'active', 'basic', 1, '2020-01-01 00:00:00', '2020-01-01 00:00:00');
+INSERT INTO `goal` (`id`, `member_id`, `name`, `description`, `status`, `type`, `goal_order`, `create_timestamp`, `update_timestamp`) 
+VALUES (2, 1, 'test2', 'test2', 'active', 'basic', 1, '2020-01-01 00:00:00', '2020-01-01 00:00:00');
 
 INSERT INTO `level_basic` (`goal_id`, `seq`, `member_id`, `label`, `value`) 
 VALUES (1, 1, 1, 'test', 1);
