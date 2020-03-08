@@ -30,6 +30,8 @@ CREATE TABLE `level_basic` (
   `member_id` BIGINT NOT NULL,
   `label` VARCHAR(45) NOT NULL,
   `value` INT NOT NULL,
+  `create_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`goal_id`, `seq`)
 );
 
