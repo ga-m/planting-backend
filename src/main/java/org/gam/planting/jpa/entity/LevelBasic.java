@@ -3,9 +3,8 @@ package org.gam.planting.jpa.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -19,13 +18,14 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 @Getter
+@IdClass(LevelBasicId.class)
 @Entity
 public class LevelBasic {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long goalId;
 
+    @Id
     private Long seq;
 
     private Long memberId;
@@ -41,8 +41,7 @@ public class LevelBasic {
     private LocalDateTime updateTimestamp;
 
     @Builder
-    public LevelBasic(Long seq, Long memberId, String label, Short value) {
-        this.seq = seq;
+    public LevelBasic(Long memberId, String label, Short value) {
         this.memberId = memberId;
         this.label = label;
         this.value = value;
