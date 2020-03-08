@@ -40,7 +40,7 @@ public class Goal {
     // @Enumerated(EnumType.STRING)
     private Type type;
 
-    private Short order;
+    private Short goalOrder;
 
     @CreationTimestamp
     private LocalDateTime createTimestamp;
@@ -49,12 +49,12 @@ public class Goal {
     private LocalDateTime updateTimestamp;
 
     @Builder
-    public Goal(Long memberId, String name, String description, Status status, Type type, Short order) {
+    public Goal(Long memberId, String name, String description, Status status, Type type, Short goalOrder) {
         this.memberId = memberId;
         this.name = name;
         this.description = description;
         this.status = status;
         this.type = type;
-        this.order = order;
+        this.goalOrder = goalOrder;
     }
 }
