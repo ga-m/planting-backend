@@ -20,7 +20,7 @@ import lombok.ToString;
 @ToString
 @Getter
 @Entity
-public class Archive {
+public class Achieve {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +39,7 @@ public class Archive {
     private LocalDateTime updateTimestamp;
 
     @Builder
-    public Archive(Long goalId, Long levelSeq, Integer memberId) {
+    public Achieve(Long goalId, Long levelSeq, Integer memberId) {
         this.goalId = goalId;
         this.levelSeq = levelSeq;
         this.memberId = memberId;
