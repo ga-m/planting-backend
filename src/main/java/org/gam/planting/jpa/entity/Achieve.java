@@ -20,17 +20,17 @@ import lombok.ToString;
 @ToString
 @Getter
 @Entity
-public class Archive {
+public class Achieve {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long goal_id;
+    private Long goalId;
 
-    private Long level_seq;
+    private Long levelSeq;
 
-    private Integer member_id;
+    private Integer memberId;
 
     @CreationTimestamp
     private LocalDateTime createTimestamp;
@@ -39,9 +39,9 @@ public class Archive {
     private LocalDateTime updateTimestamp;
 
     @Builder
-    public Archive(Long goal_id, Long level_seq, Integer member_id) {
-        this.goal_id = goal_id;
-        this.level_seq = level_seq;
-        this.member_id = member_id;
+    public Achieve(Long goalId, Long levelSeq, Integer memberId) {
+        this.goalId = goalId;
+        this.levelSeq = levelSeq;
+        this.memberId = memberId;
     }
 }
